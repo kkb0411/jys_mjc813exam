@@ -1,4 +1,4 @@
-pdfExam10(){
+function pdfExam10() {
     console.log("    *");
     console.log("   ***");
     console.log("  *****");
@@ -19,4 +19,4 @@ pdfExam10(){
         nStar += 2;
     }
 }
-let pdfExam10 = new pdfExam10();
+pdfExam10();
