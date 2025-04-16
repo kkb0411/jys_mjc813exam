@@ -1,29 +1,29 @@
 
-//17번 문제
-//class h {
-//    height = 0;
-//
-//    check() {
-//        this.height = prompt("입력하세요");
-//        if ( Number(this.height) >= 150 ) {
-//            console.log("YES");
-//        } else {
-//            console.log("NO");
-//        }
-//    }
-//}
-//
-//let l = new h();
-//l.check();
+17번 문제
+class h {
+    height = 0;
 
-//문제 18
-//class average{
-//    constructor(lan,math,eng){
-//        this.lan = lan;
-//        this.math = math;
-//        this.eng = eng;
-//    }
-//}
+    check() {
+        this.height = prompt("입력하세요");
+        if ( Number(this.height) >= 150 ) {
+            console.log("YES");
+        } else {
+            console.log("NO");
+        }
+    }
+}
+
+let l = new h();
+l.check();
+
+문제 18
+class average{
+    constructor(lan,math,eng){
+        this.lan = lan;
+        this.math = math;
+        this.eng = eng;
+    }
+}
 
 //문제 19번
 class Sqrt{
@@ -40,8 +40,26 @@ let sq = new Sqrt(10,3);
 sq.check();
 
 
-
-
 //문제 25번
+class Won{
+    constructor(half){
+        this.half=half;
+    }
+    check(){
+        console.log(this.half*this.half*3.14);
+    }
+}
+let won = new Won(20);
+won.check();
+
 //문제 26번
+
+
+
+
+
+
+
+
+
 //19,26,25
