@@ -98,3 +98,35 @@ class Exam41 {
         }
     }
 }
+
+function solveExam42() {
+    let year = document.getElementById("exam42_01").value;
+    let month = document.getElementById("exam42_02").value;
+    let date = document.getElementById("exam42_03").value;
+    if ( checkValidInputExam42(year, month, date) ) {
+        let selectDay = new Date(year, month - 1, date);
+        let arrDay = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+        document.getElementById("exam42result").innerText = arrDay[selectDay.getDay()];
+    }
+}
+
+function checkValidInputExam42(year, month, date) {
+    if ( year <= 0 || year >= 3000 ) {
+        alert("년도는 1~2999년 으로 입력하세요.");
+        return false;
+    }
+    if ( month <= 0 || month >= 13 ) {
+        alert("월은 1~12 으로 입력하세요.");
+        return false;
+    }
+    if ( date <= 0 || date >= 32 ) {
+        alert("일은 1~31 으로 입력하세요.");
+        return false;
+    }
+    return true;
+}
+
+
+
+
+
