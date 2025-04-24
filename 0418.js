@@ -56,8 +56,6 @@ class Exam40 {
 }
 
 
-
-
 function solveExam41() {
     let number = document.getElementById("exam41_01").value;
     // html 태그에서 id="exam41_01" 인 value 속성을 가져온다.
@@ -125,7 +123,51 @@ function checkValidInputExam42(year, month, date) {
     }
     return true;
 }
+}
 
+class Exam53 {
+    strMessage = "";
+    constructor(msg) {
+        this.strMessage = msg;
+    }
+    solve() {
+        let mapBracket = new Map();
+        for( let i = 0; i < this.strMessage.length; i++ ) {
+            if( this.strMessage[i] == ")"
+              || this.strMessage[i] == "}"
+              || this.strMessage[i] == "]" ) {
+                if ( !mapBracket.has(this.strMessage[i]) ) {
+                    return "NO";
+                } else {
+                    mapBracket.set(this.strMessage[i], mapBracket.get(this.strMessage[i]) - 1);
+                    // 닫는괄호를 만나면 ), }, ] 키에 해당하는 값을 -1 시킨다.
+                }
+            } else if ( this.strMessage[i] == "(" ) {
+                // 여는괄호 ( 를 만나면 map.set(")", +1);
+                //mapBracket.set(")", getNumber(mapBracket.get(")")) + 1);
+                mapBracket.set(")", (mapBracket.has(")") ? mapBracket.get(")") : 0) + 1);
+            } else if ( this.strMessage[i] == "{" ) {
+                // 여는괄호 { 를 만나면 map.set("}", +1);
+//                mapBracket.set("}", getNumber(mapBracket.get("}")) + 1);
+                mapBracket.set("}", (mapBracket.has("}") ? mapBracket.get("}") : 0) + 1);
+            } else if ( this.strMessage[i] == "[" ) {
+                // 여는괄호 [ 를 만나면 map.set("]", +1);
+//                mapBracket.set("]", getNumber(mapBracket.get("]")) + 1);
+                mapBracket.set("]", (mapBracket.has("]") ? mapBracket.get("]") : 0) + 1);
+            }
+        }
+        if (getNumber(mapBracket.get(")")) == 0
+          && getNumber(mapBracket.get("}")) == 0
+          && getNumber(mapBracket.get("]")) == 0) {
+          // map.get(")") == 0 이면 ()() 완료
+          // map.get("}") == 0 이면 {}{{}} 완료
+          // map.get("]") == 0 이면 [[[]]] 완료
+            return "YES";
+        } else {
+            return "NO";
+        }
+    }
+}
 
 
 
