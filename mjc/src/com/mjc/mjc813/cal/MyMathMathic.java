@@ -24,6 +24,14 @@ public class MyMathMathic {
 			return false;
 		}
 	}
+	public boolean same(String a, String b) {
+		if(a==b) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	public boolean notsame(int a, int b) {
 		if(a!=b) {
 			return true;
@@ -72,8 +80,8 @@ public class MyMathMathic {
 	public String toOct(int a) {
 		return Integer.toOctalString(a);
 	}
-	public int toDec(int a) {
-		return a;
+	public int toDec(String a) {
+		return 0;
 	}
 	
 	public static void main(String[] args) {
@@ -87,11 +95,12 @@ public class MyMathMathic {
 
 	        // 비교 연산 테스트
 	        System.out.println("Same(int): " + MMM.same(10, 10));
+	        System.out.println("Same(string): " + MMM.same("25", "30"));
 	        System.out.println("NotSame: " + MMM.notsame(10, 5));
 	        System.out.println("Big: " + MMM.big(10, 5));
 	        System.out.println("Small: " + MMM.small(3, 5));
 
-	        // 기타 연산 테스트
+	        // 기타 연산 테스트 
 	        System.out.println("Shift Left: " + MMM.shiftLeft(8, (byte) 2));
 	        System.out.println("Shift Right: " + MMM.shiftRight(8, (byte) 2));
 	        System.out.println("Shift Right 0: " + MMM.shiftRight0(-8, (byte) 2));
@@ -100,7 +109,7 @@ public class MyMathMathic {
 	        System.out.println("To Hex: " + MMM.toHex(255));
 	        System.out.println("To Bin: " + MMM.toBin(255));
 	        System.out.println("To Oct: " + MMM.toOct(255));
-	        System.out.println("To Dec: " + MMM.toDec(12345));
+	        System.out.println("To Dec: " + MMM.toDec("12345"));
 	}
 }
 	
