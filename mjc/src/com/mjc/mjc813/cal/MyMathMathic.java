@@ -80,8 +80,8 @@ public class MyMathMathic {
 	public String toOct(int a) {
 		return Integer.toOctalString(a);
 	}
-	public int toDec(String a) {
-		return 0;
+	public String toDec(String a) {
+		return a;
 	}
 	
 	public static void main(String[] args) {
